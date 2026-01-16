@@ -39,7 +39,13 @@ public class List {
      * GIVE Adds a CharData object with the given character to the beginning of this
      * list.
      */
-    public void addFirst(char chr) {
+    public void addFirst(char chr) {// throws Exception {
+        // if (indexOf(chr)!=-1) {
+        // throw new Exception();
+        // }
+
+        // Tests won't compile if I add the exception to the method signature
+
         Node node = new Node(new CharData(chr));
         node.next = first;
         first = node;
@@ -49,15 +55,17 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         Node node = first;
-        StringBuilder strBuilder = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
+        builder.append("(");
         while (node != null) {
-            strBuilder.append(node.cp.toString());
+            builder.append(node.cp.toString());
             if (node.next != null) {
-                strBuilder.append(" ");
+                builder.append(" ");
             }
             node = node.next;
         }
-        return strBuilder.toString();
+        builder.append(")");
+        return builder.toString();
     }
 
     /**
