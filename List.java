@@ -150,9 +150,8 @@ public class List {
     public CharData[] toArray() {
         CharData[] arr = new CharData[size];
         Node current = first;
-        int i = 0;
-        while (current != null) {
-            arr[i++] = current.cp;
+        for (int i = 0; i < size; i++) {
+            arr[i] = current.cp;
             current = current.next;
         }
         return arr;
