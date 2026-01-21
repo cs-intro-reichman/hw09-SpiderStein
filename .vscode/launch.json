@@ -16,6 +16,13 @@
             "request": "launch",
             "mainClass": "ListTester",
             "args": ["all"]
+        },
+        {
+            "type": "java",
+            "name": "Launch LanguageModelTester",
+            "request": "launch",
+            "mainClass": "LanguageModelTester",
+            "args": ["getRandomChar"]
         }
     ]
 }

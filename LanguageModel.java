@@ -65,8 +65,19 @@ public class LanguageModel {
 
     // Returns a random character from the given probabilities list.
     char getRandomChar(List probs) {
-        // Your code goes here
-        return ' ';
+        // If the list is empty, an exception should be thrown but
+        // I don't want to change the method signature,
+        // so dependents like tests will be broken
+        double randomSample = randomGenerator.nextDouble();
+        ListIterator iter = probs.listIterator(0);
+        int listSize = probs.getSize();
+        for(int i = 0; i < listSize; i++){
+            if(randomSample < iter.current.cp.cp){
+                break;
+            }
+            iter.next();
+        }
+        return iter.current.cp.chr;
     }
 
     /**
