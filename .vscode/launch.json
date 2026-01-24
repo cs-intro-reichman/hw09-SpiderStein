@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LanguageModel",
+            "request": "launch",
+            "mainClass": "LanguageModel",
+            "projectName": "hw09-SpiderStein_6366a533"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -15,14 +22,18 @@
             "name": "Launch ListTester",
             "request": "launch",
             "mainClass": "ListTester",
-            "args": ["all"]
+            "args": [
+                "all"
+            ]
         },
         {
             "type": "java",
             "name": "Launch LanguageModelTester",
             "request": "launch",
             "mainClass": "LanguageModelTester",
-            "args": ["getRandomChar"]
+            "args": [
+                "train"
+            ]
         }
     ]
 }
