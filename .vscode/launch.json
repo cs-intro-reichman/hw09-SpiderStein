@@ -9,7 +9,14 @@
             "name": "LanguageModel",
             "request": "launch",
             "mainClass": "LanguageModel",
-            "projectName": "hw09-SpiderStein_6366a533"
+            "projectName": "hw09-SpiderStein_6366a533",
+            "args": [
+                "7",
+                "Natural",
+                "172",
+                "fixed",
+                "originofspecies.txt"
+            ]
         },
         {
             "type": "java",

@@ -92,7 +92,7 @@ public class LanguageModel {
         // If the list is empty, an exception should be thrown but
         // I don't want to change the method signature,
         // so dependents like tests will be broken
-        double randomSample = randomGenerator.nextDouble();
+        double randomSample = this.randomGenerator.nextDouble();
         ListIterator iter = probs.listIterator(0);
         int listSize = probs.getSize();
         for (int i = 0; i < listSize; i++) {
@@ -117,7 +117,19 @@ public class LanguageModel {
      */
     public String generate(String initialText, int textLength) {
         // Your code goes here
-        return "";
+        if(initialText.length() < windowLength) {
+            return initialText;
+        }
+        while(initialText.length() < textLength) {
+            String window = initialText.substring(initialText.length() - this.windowLength);
+            if (!CharDataMap.containsKey(window)) {
+                break;
+            }
+            List probs = CharDataMap.get(window);
+            char nextChar = getRandomChar(probs);
+            initialText += nextChar;
+        }
+        return initialText;
     }
 
     /** Returns a string representing the map of this language model. */
