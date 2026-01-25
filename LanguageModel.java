@@ -120,7 +120,7 @@ public class LanguageModel {
         if (initialText.length() < windowLength) {
             return initialText;
         }
-        while (initialText.length() < textLength) {
+        for (int i = 0; i < textLength; i++) {
             String window = initialText.substring(initialText.length() - this.windowLength);
             if (!CharDataMap.containsKey(window)) {
                 break;
